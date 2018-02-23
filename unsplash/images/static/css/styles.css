@@ -1,4 +1,15 @@
 /*sass --watch styles.scss:styles.css*/
+.image-show a {
+  text-decoration: none !important;
+  color: aqua !important; }
+
+.all-images a {
+  text-decoration: none !important;
+  color: aqua !important; }
+
+body {
+  background-color: #eee; }
+
 img {
   width: 50%;
   height: 50%; }
