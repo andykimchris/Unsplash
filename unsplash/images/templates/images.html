@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row image-show">
+
+      <img src="{{image_id.image.url}}" class="img-responsive" alt="">
+
+      <h2><a href="{{image_id.get_absolute_url}}">{{image_id.image_name}}</a></h2>
+        <h3>{{image_id.description}} <br></h3>
+        <h3>Taken in:{{image_id.location}} <br></h3>
+        <h3>Category:{{image_id.category}} <br></h3>
+
+    </div>
+  </div>
+{% endblock %}
