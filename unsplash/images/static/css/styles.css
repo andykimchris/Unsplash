@@ -1,0 +1,36 @@
+/*sass --watch styles.scss:styles.css*/
+img {
+  width: 50%;
+  height: 50%; }
+
+h5 {
+  color: blue; }
+
+h1, h2 {
+  color: aqua;
+  font-family: 'Convergence', sans-serif; }
+
+h3 {
+  color: #aaa;
+  font-family: 'Kavivanar', cursive; }
+
+.header-text {
+  text-align: center; }
+
+.btn {
+  background-color: aqua; }
+
+.navbar-brand {
+  color: aqua !important;
+  font-family: 'Slabo 13px', serif;
+  font-size: 20px; }
+
+.navbar-nav > li > a {
+  color: aqua !important;
+  font-family: 'Slabo 13px', serif;
+  font-size: 16px; }
+
+.header-image {
+  background-image: url("/static/images/header-img.jpg"); }
+
+/*# sourceMappingURL=styles.css.map */
