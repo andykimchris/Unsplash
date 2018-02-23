@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Location(models.Model):
@@ -53,10 +54,10 @@ class Gallery(models.Model):
     def delete_images(self):
         self.remove()
 
-    def update_image(self, id):
-        pass
+    def get_absolute_url(self):
+        return reverse('gallery:image', kwargs={'id': self.id})
 
-    def get_image_by_id(id):
+    def update_image(self, id):
         pass
 
     def filter_by_location(location):
