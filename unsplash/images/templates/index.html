@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  {{block.super}}
+  <h2>hi</h2>
+  <div class="header">
+  </div>
+  <h1 class="header-text">Welcome to the best Photo Gallery on this Planet</h1>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="form">
+        <form class="form" role="search" action="">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Category" name="q">
+            <div class="input-group-btn">
+              <button class="btn" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="header-image">
+
+      </div>
+      <div class="all-images">
+        {% for image in images %}
+
+          <img src="{{image.image.url}}" alt="">
+           <br>
+           <h2>{{image.image_name}}</h2>
+          <h3>{{image.description}} <br></h3>
+          <h3>{{image.location}} <br></h3>
+          <h3>{{image.category}} <br></h3>
+        {% endfor %}  
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
