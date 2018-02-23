@@ -1,12 +1,29 @@
 /*sass --watch styles.scss:styles.css*/
-
+// SASS VARIABLES
 $aqua: aqua;
 
+// SASS MIXINS
+@mixin anchortags {
+  a{
+    text-decoration: none !important;
+    color: $aqua !important;
+  }
+}
+.image-show {
+  @include anchortags;
+}
+.all-images {
+  @include anchortags;
+}
+
+//GENERAL CODE
+body {
+  background-color: #eee;
+}
 img {
   width: (100% / 2);
   height: (100% / 2);
 }
-
 h5 {
   color: blue;
 }
