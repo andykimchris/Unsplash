@@ -46,3 +46,21 @@ class Gallery(models.Model):
     def my_images(cls):
         images = cls.objects.all()
         return images
+
+    def save_images(self):
+        self.save()
+
+    def delete_images(self):
+        self.remove()
+
+    def update_image(self, id):
+        pass
+
+    def get_image_by_id(id):
+        pass
+
+    def filter_by_location(location):
+        pass
+
+    def search_image(category):
+        pass
