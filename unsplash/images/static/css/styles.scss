@@ -1,13 +1,19 @@
 /*sass --watch styles.scss:styles.css*/
 // SASS VARIABLES
-$aqua: aqua;
-
+$maincolor: midnightblue;
+$headings-font-size: 40px;
+$text-color: #2b2b42;
 // SASS MIXINS
 @mixin anchortags {
   a{
-    text-decoration: none !important;
-    color: $aqua !important;
+    color: $maincolor !important;
   }
+}
+@mixin anchorcolorchange {
+    &:hover{
+      background-color: #aaa !important;
+      color: $maincolor !important;
+    }
 }
 .image-show {
   @include anchortags;
@@ -27,31 +33,36 @@ img {
 h5 {
   color: blue;
 }
-
+h1 {
+  font-size: $headings-font-size;
+  color: $maincolor;
+  font-family: 'Convergence', sans-serif;
+}
 h1,h2{
-  color: $aqua;
+  color: $maincolor;
   font-family: 'Convergence', sans-serif;
 }
 h3{
-  color: #aaa;
+  color:$text-color ;
   font-family: 'Kavivanar', cursive;
 }
 .header-text{
   text-align: center;
 }
 .btn {
-  background-color:$aqua;
+  background-color:$maincolor;
+  color: $text-color;
+  @include anchorcolorchange;
 }
 .navbar-brand{
-  color: $aqua !important;
+  color: $maincolor !important;
   font-family: 'Slabo 13px', serif;
   font-size: 20px;
 }
+
 .navbar-nav > li > a {
-  color: $aqua  !important;
+  color: $maincolor  !important;
   font-family: 'Slabo 13px', serif;
   font-size: 16px;
-}
-.header-image {
-  background-image: url('/static/images/header-img.jpg');
+  @include anchorcolorchange;
 }
