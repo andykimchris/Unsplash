@@ -43,10 +43,18 @@ class Gallery(models.Model):
     def __str__(self):
         return self.image_name
 
+    class Meta:
+        ordering = ['-image']
+
     @classmethod
     def my_images(cls):
         images = cls.objects.all()
         return images
+
+    @classmethod
+    def search_by_category(cls, search_category):
+        category = cls.objects.filter(category__icontains=search_category)
+        return category
 
     def save_images(self):
         self.save()
