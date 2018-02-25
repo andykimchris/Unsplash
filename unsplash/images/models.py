@@ -44,7 +44,7 @@ class Gallery(models.Model):
         return self.image_name
 
     class Meta:
-        ordering = ['-image']
+        ordering = ['image']
 
     @classmethod
     def my_images(cls):
@@ -52,15 +52,15 @@ class Gallery(models.Model):
         return images
 
     @classmethod
-    def search_by_category(cls, search_category):
-        category = cls.objects.filter(category__icontains=search_category)
-        return category
+    def search_by_category(cls, search_term):
+        category_id = cls.objects.filter(category_id__icontains=search_term)
+        return category_id
 
     def save_images(self):
         self.save()
 
-    def delete_images(self):
-        self.remove()
+    def get_delete_url(self):
+        return reverse("gallery:delete_image", kwargs={"id": self.id})
 
     def get_absolute_url(self):
         return reverse('gallery:image', kwargs={'id': self.id})
