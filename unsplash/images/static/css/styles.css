@@ -1,9 +1,49 @@
 /*sass --watch styles.scss:styles.css*/
-.image-show a {
-  color: midnightblue !important; }
+.btn-update {
+  background-color: midnightblue;
+  color: #eee;
+  border: none;
+  padding: 10px 14px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+  .btn-update:hover {
+    background-color: #eee !important;
+    color: midnightblue !important;
+    border: 1px solid midnightblue; }
+  .btn-update a {
+    color: #fff;
+    text-decoration: none; }
+    .btn-update a:hover {
+      color: midnightblue !important; }
 
-.all-images a {
-  color: midnightblue !important; }
+.btn-delete {
+  background-color: midnightblue;
+  color: #eee;
+  border: none;
+  padding: 10px 14px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+  .btn-delete:hover {
+    background-color: #eee !important;
+    color: midnightblue !important;
+    border: 1px solid midnightblue; }
+  .btn-delete a {
+    color: #fff;
+    text-decoration: none; }
+    .btn-delete a:hover {
+      color: midnightblue !important; }
 
 body {
   background-color: #eee; }
@@ -12,15 +52,12 @@ img {
   width: 50%;
   height: 50%; }
 
-h5 {
-  color: blue; }
-
 h1 {
   font-size: 40px;
   color: midnightblue;
   font-family: 'Convergence', sans-serif; }
 
-h1, h2 {
+h2 {
   color: midnightblue;
   font-family: 'Convergence', sans-serif; }
 
@@ -31,11 +68,14 @@ h3 {
 .header-text {
   text-align: center; }
 
+.all-images a {
+  color: midnightblue !important; }
+
 .btn {
   background-color: midnightblue;
-  color: #2b2b42; }
+  color: #eee; }
   .btn:hover {
-    background-color: #aaa !important;
+    background-color: #eee !important;
     color: midnightblue !important; }
 
 .navbar-brand {
@@ -48,7 +88,9 @@ h3 {
   font-family: 'Slabo 13px', serif;
   font-size: 16px; }
   .navbar-nav > li > a:hover {
-    background-color: #aaa !important;
-    color: midnightblue !important; }
+    background-color: midnightblue !important;
+    color: #eee !important;
+    border: 1px solid midnightblue;
+    padding: 14px; }
 
 /*# sourceMappingURL=styles.css.map */
