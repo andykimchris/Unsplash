@@ -9,15 +9,6 @@
         <h2> Found 0 images for the search term {{message}}</h2>
       {% endif %}
     </div>
-    <div class="row">
-      {% for item in  images%}
-      <img src="{{item.image.url}}" alt="">
-       <br>
-       <h2>{{item.image_name}}</h2>
-      <h3>{{item.description}} <br></h3>
-      <h3>{{item.location}} <br></h3>
-      <h3>{{item.category}} <br></h3>
-      {% endfor %}
-    </div>
+  
   </div>
 {% endblock %}
