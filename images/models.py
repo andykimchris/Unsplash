@@ -24,6 +24,7 @@ class Category(models.Model):
     def save_category(self):
         self.save()
 
+
 class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery/', null=True, blank=True,
                               width_field="width_field", height_field="height_field")
@@ -38,7 +39,7 @@ class Gallery(models.Model):
         return self.image_name
 
     class Meta:
-        ordering = ['image']
+        ordering = ['-image']
 
     @classmethod
     def my_images(cls):
@@ -47,7 +48,8 @@ class Gallery(models.Model):
 
     @classmethod
     def search_by_category(cls, search_term):
-        category = cls.objects.filter(category__category__icontains=search_term)
+        category = cls.objects.filter(
+            category__category__icontains=search_term)
         return category
 
     def save_images(self):
