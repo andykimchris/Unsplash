@@ -94,4 +94,9 @@ h3 {
     border: 1px solid midnightblue;
     padding: 14px; }
 
+input {
+  color: midnightblue;
+  padding: 9px;
+  border: 1px dashed midnightblue; }
+
 /*# sourceMappingURL=styles.css.map */
