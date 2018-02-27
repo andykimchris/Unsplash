@@ -4,7 +4,6 @@ from .models import Gallery, Location, Category
 # Create your views here.
 
 
-
 def delete_image(request, id):
 
     image_id = Gallery.objects.get(id=id)
@@ -14,48 +13,60 @@ def delete_image(request, id):
         image.remove()
         return redirect(delete_image)
 
-    context = {
+    return render(request, 'images.html', {
         "image_id": image_id
-    }
-    return render(request, 'images.html', context)
+    })
 
 
 def show_image_id(request, id):
 
     image_id = Gallery.objects.get(id=id)
-    context = {
+
+    return render(request, 'images.html', {
         "image_id": image_id
-    }
-    return render(request, 'images.html', context)
+    })
 
 
-def search(request):
+def search_results(request):
 
-    images = Gallery.objects.all()
-    query = request.GET.get('category')
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_images = Gallery.search_by_category(search_term)
+        message = f"{search_term}"
 
-    if query:
-        newlist = images.filter(category__category__icontains=query)
-     
-        return render(request, 'search.html',{
-            "newlist": newlist,
+        return render(request, 'search.html', {
             "message": message,
+            "category": searched_images
         })
 
     else:
         message = "You haven't searched for any term"
-        context = {
-            "message": message
-        }
-        return render(request, 'search1.html', context)
+        return render(request, 'search.html', {"message": message})
+
+
+def search_location(request):
+
+    if 'location' in request.GET and request.GET["location"]:
+        search_term = request.GET.get("location")
+        searched_images = Image.search_by_location(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search1.html', {
+            "message": message,
+            "category": searched_images
+        })
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search1.html', {"message": message})
+
 
 def index(request):
 
     title = 'Unsplash Images'
-    images = Gallery.my_images()
+    images = Gallery.objects.all()
 
-    context = {
+    return render(request, 'index.html', {
         "title": title,
         "images": images
-    }
-    return render(request, 'index.html', context)
+    })
