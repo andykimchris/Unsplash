@@ -13,9 +13,12 @@
   </div>
   <div class="row">
     {% if location %}
+    {% for location in location %}
+
     <img src="{{location.image.url}}" class="img-responsive" alt="">
   <h2><a href="{{location.get_absolute_url}}">{{location.image_name}}</a></h2>
 
+      {% endfor %}
     {% endif %}
   </div>
 
