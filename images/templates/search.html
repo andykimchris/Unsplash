@@ -4,7 +4,7 @@
     <div class="row">
       {% if category %}
         <h2>Found {{category| length}} of searched term {{message}}</h2>
-  
+
         {% else %}
         <h2> Found 0 images for the search term {{message}}</h2>
       {% endif %}
@@ -14,7 +14,7 @@
       {% for category in category%}
 
         <img src="{{category.image.url}}" class="img-responsive" alt="">
-      <h2><a href="{{category.get_absolute_url}}">{{category.image_name}}</a></h2>
+      <h2 style="color:midnightblue;font-family:'Convergence', sans-serif;"><a href="{{category.get_absolute_url}}">{{category.image_name}}</a></h2>
 
           {% endfor %}
       {% endif %}
