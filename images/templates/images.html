@@ -12,6 +12,10 @@
         <h3>Photo Category:{{image_id.category}} <br></h3>
           <button type="button" name="button" class="btn-update"><a href="/">Update</a> </button>
           <button type="button" name="button" class="btn-delete"><a href="{{image_id.get_delete_url}}">Delete</a></button>
+
+            <button onclick="myFunction()" class="btn-delete">Copy Image Link</button>
+          <input type="text" value="{{ image_id.image_name}}" id="myInput">
+
     </div>
   </div>
 {% endblock %}
