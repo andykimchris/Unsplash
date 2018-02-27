@@ -14,7 +14,7 @@
       {% for category in category%}
 
         <img src="{{category.image.url}}" class="img-responsive" alt="">
-      <h2 style="color:midnightblue;font-family:'Convergence', sans-serif;"><a href="{{category.get_absolute_url}}">{{category.image_name}}</a></h2>
+      <h2><a href="{{category.get_absolute_url}}" style="color:midnightblue;font-family:'Convergence', sans-serif;">{{category.image_name}}</a></h2>
 
           {% endfor %}
       {% endif %}
