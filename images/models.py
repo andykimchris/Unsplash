@@ -32,6 +32,7 @@ class Gallery(models.Model):
     height_field = models.IntegerField(default=0)
     image_name = models.CharField(max_length=25)
     description = models.TextField(max_length=100)
+    url = models.URLField(default=1)
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
 
