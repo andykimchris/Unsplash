@@ -2,5 +2,22 @@
 
 {% block content %}
 
-<h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis libero dolor animi ut provident incidunt ipsum molestiae eveniet sit atque dignissimos beatae voluptatibus iste similique voluptas, inventore, rerum ab?</h2>
+<div class="container">
+  <div class="row">
+    {% if location %}
+      <h2>Found {{location| length}} of searched term {{message}}</h2>
+      <h3>{{location.image_name}}</h3>
+      {% else %}
+      <h2> Found 0 images for the search term {{message}}</h2>
+    {% endif %}
+  </div>
+  <div class="">
+    {% if location %}
+    <img src="{{location.image.url}}" class="img-responsive" alt="">
+  <h2><a href="{{location.get_absolute_url}}">{{location.image_name}}</a></h2>
+
+    {% endif %}
+  </div>
+
+</div>
 {% endblock %}
