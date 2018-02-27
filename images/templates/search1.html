@@ -11,7 +11,7 @@
       <h2> Found 0 images for the search term {{message}}</h2>
     {% endif %}
   </div>
-  <div class="">
+  <div class="row">
     {% if location %}
     <img src="{{location.image.url}}" class="img-responsive" alt="">
   <h2><a href="{{location.get_absolute_url}}">{{location.image_name}}</a></h2>
