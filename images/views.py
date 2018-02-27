@@ -48,12 +48,12 @@ def search_location(request):
 
     if 'location' in request.GET and request.GET["location"]:
         search_term = request.GET.get("location")
-        searched_images = Image.search_by_location(search_term)
+        searched_images = Gallery.search_by_location(search_term)
         message = f"{search_term}"
 
         return render(request, 'search1.html', {
             "message": message,
-            "category": searched_images
+            "location": searched_images
         })
 
     else:
