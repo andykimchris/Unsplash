@@ -16,10 +16,10 @@ class Location(models.Model):
 
 
 class Category(models.Model):
-    category = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.category
+        return self.name
 
     def save_category(self):
         self.save()
@@ -49,9 +49,15 @@ class Gallery(models.Model):
 
     @classmethod
     def search_by_category(cls, search_term):
-        category = cls.objects.filter(
-            category__category__icontains=search_term)
-        return category
+        value = cls.objects.filter(
+            category__name__icontains=search_term)
+        return value
+
+    @classmethod
+    def search_by_location(cls, search_term):
+        value = cls.objects.filter(
+            location__place__icontains=search_term)
+        return value
 
     def save_images(self):
         self.save()
