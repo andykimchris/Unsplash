@@ -4,6 +4,10 @@ from .models import Category, Gallery, Location
 
 class CategoryTestClass(TestCase):
 
+    '''
+    initial test case to check if an instance of Category class exists
+    '''
+
     def setUp(self):
         self.food = Category(name='Food')
 
@@ -18,6 +22,10 @@ class CategoryTestClass(TestCase):
 
 class LocationTestClass(TestCase):
 
+    '''
+    initial test case to check if an instance of Loction class exists
+    '''
+
     def setUp(self):
         self.nairobi = Location(place='Nairobi')
 
@@ -31,6 +39,9 @@ class LocationTestClass(TestCase):
 
 
 class GalleryTestClass(TestCase):
+    '''
+    initial test case to check if an instance of Gallery class exists
+    '''
 
     def setUp(self):
         self.image = Gallery(id='6', image='/gallery/fabian-irsara-92113-unsplash.jpg', width_field='5046', height_field='3364', image_name='Hacking at Cafe Bistro',
