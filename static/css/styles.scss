@@ -90,6 +90,7 @@ h3{
   &:hover{
     background-color:$body-bg !important;
     color: $maincolor !important;
+    border:1px solid $maincolor;
   }
 }
 .navbar-brand{

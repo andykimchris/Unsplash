@@ -4,17 +4,6 @@ from .models import Gallery, Location, Category
 # Create your views here.
 
 
-def index(request):
-
-    title = 'Unsplash Images'
-    images = Gallery.my_images()
-
-    context = {
-        "title": title,
-        "images": images
-    }
-    return render(request, 'index.html', context)
-
 
 def delete_image(request, id):
 
@@ -42,20 +31,31 @@ def show_image_id(request, id):
 
 def search(request):
 
-    if 'category' in request.GET and request.GET['category']:
-        search_term = request.GET.get('category')
-        category = Category.search_by_image(search_term)
-        message = f"{search_term}"
+    images = Gallery.objects.all()
+    query = request.GET.get('category')
 
-        context = {
-            "category": category,
+    if query:
+        newlist = images.filter(category__category__icontains=query)
+     
+        return render(request, 'search.html',{
+            "newlist": newlist,
             "message": message,
-        }
-        return render(request, 'search.html', context)
+        })
 
     else:
         message = "You haven't searched for any term"
         context = {
             "message": message
         }
-        return render(request, 'search.html', context)
+        return render(request, 'search1.html', context)
+
+def index(request):
+
+    title = 'Unsplash Images'
+    images = Gallery.my_images()
+
+    context = {
+        "title": title,
+        "images": images
+    }
+    return render(request, 'index.html', context)
