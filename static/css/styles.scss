@@ -80,6 +80,7 @@ h3{
 .header-text{
   text-align: center;
 }
+
 .all-images {
   a{
     @include anchortags;
@@ -113,6 +114,10 @@ h3{
 input {
   color: $maincolor;
   padding: 9px;
-  border: 1px dashed midnightblue;
+  border: 1px dashed  $maincolor;
   font-family:  'Convergence', sans-serif !important;
+}
+.form-control {
+  color:  $maincolor;
+  border:1px dashed  $maincolor;
 }

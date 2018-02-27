@@ -101,4 +101,8 @@ input {
   border: 1px dashed midnightblue;
   font-family: 'Convergence', sans-serif !important; }
 
+.form-control {
+  color: midnightblue;
+  border: 1px dashed midnightblue; }
+
 /*# sourceMappingURL=styles.css.map */
