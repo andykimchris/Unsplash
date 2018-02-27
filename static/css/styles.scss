@@ -71,6 +71,7 @@ h1 {
 }
 h2{
   @include text;
+  font-size: 30px;
 }
 h3{
   color:$text-color ;
@@ -113,4 +114,5 @@ input {
   color: $maincolor;
   padding: 9px;
   border: 1px dashed midnightblue;
+  font-family:  'Convergence', sans-serif !important;
 }
