@@ -37,12 +37,15 @@
           <h2>All Images</h2>
           <div class="all-images">
 
-            {% for image_id in images %}
-            <img src="{{image_id.image.url}}" class="img-responsive" alt="">
+            {% if images %}
+              {% for image in images %}
+              <h1> {{ image.image }} </h1>
+              <img src="{{ image.url }}" class="img-responsive" alt="">
 
-            <h2><a href="{{image_id.get_absolute_url}}">{{image_id.image_name}}</a></h2>
+              <h2><a href="{{ image.get_absolute_url }}">{{ image.image_name }}</a></h2>
 
-            {% endfor %}
+              {% endfor %}
+            {% endif %}
             </div>
         </div>
       </div>

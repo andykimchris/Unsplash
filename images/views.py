@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
 from django.http import Http404
-from .models import Gallery, Location, Category
+from django.shortcuts import redirect, render
+
+from .models import Category, Gallery, Location
+
 # Create your views here.
 
 
@@ -61,7 +63,7 @@ def search_location(request):
         return render(request, 'search1.html', {"message": message})
 
 
-def index(request):
+def index(request): 
 
     title = 'Unsplash Images'
     images = Gallery.objects.all()
