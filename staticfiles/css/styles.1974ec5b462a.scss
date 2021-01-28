@@ -1,0 +1,123 @@
+/*sass --watch styles.scss:styles.css*/
+// SASS VARIABLES
+$maincolor: midnightblue;
+$headings-font-size: 40px;
+$text-color: #2b2b42;
+$body-bg: #eee;
+// SASS MIXINS
+@mixin anchortags {
+    color: $maincolor  !important;
+}
+@mixin text{
+  color: $maincolor;
+  font-family: 'Convergence', sans-serif;
+}
+@mixin button {
+    background-color: $maincolor;
+    color: $body-bg;
+    border:none;
+    padding: 10px 14px;
+    margin:10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn-update {
+  @include button;
+  &:hover{
+    background-color:$body-bg !important;
+    color:$maincolor !important;
+    border:1px solid $maincolor;
+  }
+  a {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: $maincolor !important;
+  }
+}
+}
+.btn-delete {
+  @include button;
+  &:hover{
+    background-color:$body-bg !important;
+    color:$maincolor !important;
+    border:1px solid $maincolor;
+  }
+  a {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: $maincolor !important;
+  }
+}
+}
+//GENERAL CODE
+body {
+  background-color: $body-bg;
+}
+img {
+  width: (100% / 2);
+  height: (100% / 2);
+}
+
+h1 {
+  font-size: $headings-font-size;
+  @include text;
+}
+h2{
+  @include text;
+  font-size: 30px;
+}
+h3{
+  color:$text-color ;
+  font-family: 'Kavivanar', cursive;
+}
+.header-text{
+  text-align: center;
+}
+
+.all-images {
+  a{
+    @include anchortags;
+  }
+}
+.btn {
+  background-color:$maincolor;
+  color:$body-bg;
+  &:hover{
+    background-color:$body-bg !important;
+    color: $maincolor !important;
+    border:1px solid $maincolor;
+  }
+}
+.navbar-brand{
+  color: $maincolor !important;
+  font-family: 'Slabo 13px', serif;
+  font-size: 20px;
+}
+.navbar-nav > li > a {
+  color: $maincolor  !important;
+  font-family: 'Slabo 13px', serif;
+  font-size: 16px;
+  &:hover{
+    background-color:$maincolor !important;
+    color:$body-bg  !important;
+    border:1px solid $maincolor;
+    padding:14px;
+  }
+}
+input {
+  color: $maincolor;
+  padding: 9px;
+  border: 1px dashed  $maincolor;
+  font-family:  'Convergence', sans-serif !important;
+}
+.form-control {
+  color:  $maincolor;
+  border:1px dashed  $maincolor;
+}

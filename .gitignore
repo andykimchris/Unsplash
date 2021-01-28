@@ -1,4 +1,4 @@
-virtual/
+env/
 *.pyc
 unsplash/images/static/css/.sass-cache/*
 .env

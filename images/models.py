@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class Location(models.Model):
@@ -33,8 +33,8 @@ class Gallery(models.Model):
     image_name = models.CharField(max_length=25)
     description = models.TextField(max_length=100)
     url = models.URLField(default=1)
-    location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.image_name
